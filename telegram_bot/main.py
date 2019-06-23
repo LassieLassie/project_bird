@@ -34,8 +34,10 @@ if __name__ == '__main__':
     # Включим самый базовый логгинг, чтобы видеть сообщения об ошибках
     logging.basicConfig(
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        level=logging.INFO)
+        level=logging.DEBUG)
     # используем прокси, так как без него у меня ничего не работало(
     updater = Updater(token=token)
     updater.dispatcher.add_handler(MessageHandler(Filters.photo, send_prediction_on_photo))
+    logging.debug("before updater.start_polling()")
     updater.start_polling()
+    logging.debug("after updater.start_polling()")
