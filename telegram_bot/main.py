@@ -21,7 +21,7 @@ def send_prediction_on_photo(bot, update):
     image_file.download(out=image_stream)
 
     class_ = model.predict(image_stream)
-
+    
     # теперь отправим результат
     update.message.reply_text(str(class_))
     print("Sent Answer to user, predicted: {}".format(class_))
