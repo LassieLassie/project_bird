@@ -13,7 +13,7 @@ from fastai.vision import load_learner, Image
 class ClassPredictor:
     def __init__(self):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.model = load_learner("../model/export.pkl")
+        self.model = load_learner("../model/")
         self.to_tensor = transforms.ToTensor()
         #self.device = torch.device('cpu')
         #self.model = torch.load('./modelka.pkl', map_location=self.device)
@@ -45,7 +45,7 @@ class ClassPredictor:
     # ниже пример того, как переносить методы
     def process_image(self, img_stream):
         # используем PIL, чтобы получить картинку из потока и изменить размер
-        #image = PIL_Image.open(img_stream).resize((256, 256))
+        image = PIL_Image.open(img_stream).resize((224, 224))
         #image = self.transform(image)
         # переводим картинку в тензор и оборачиваем в объект Image, который использует fastai у себя внутри
         image = Image(self.to_tensor(image))
