@@ -1,5 +1,4 @@
 from telegram_bot.model import ClassPredictor
-from telegram_bot.telegram_token import token
 import torch
 from telegram_bot.config import reply_texts
 import numpy as np
@@ -7,6 +6,7 @@ from PIL import Image
 from io import BytesIO
 
 
+token = '865496874:AAEnuxZDDJNAgAFNB25zDbagy-8JO1h-vRA'
 model = ClassPredictor()
 
 
