@@ -1,0 +1,5 @@
+name: project_bird #Environment name
+dependencies:
+  - python=3.6
+  - pip:
+    - pillow
