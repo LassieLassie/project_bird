@@ -1,1 +1,1 @@
-web: python telegram_bot/main.py
+bot: python telegram_bot/main.py
