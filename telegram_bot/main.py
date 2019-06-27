@@ -37,6 +37,4 @@ if __name__ == '__main__':
     # используем прокси, так как без него у меня ничего не работало(
     updater = Updater(token=token)
     updater.dispatcher.add_handler(MessageHandler(Filters.photo, send_prediction_on_photo))
-    logging.debug("before updater.start_polling()")
     updater.start_polling()
-    logging.debug("after updater.start_polling()")

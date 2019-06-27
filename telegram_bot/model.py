@@ -16,11 +16,6 @@ class ClassPredictor:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model = load_learner(path.dirname(path.abspath(__file__)) + sep + ".." + sep + "model", "export.pkl")
         self.to_tensor = transforms.ToTensor()
-        #self.device = torch.device('cpu')
-        #self.model = torch.load('./modelka.pkl', map_location=self.device)
-        #self.transform = transforms.Compose([transforms.Resize((224,224)),
-                                #transforms.ToTensor(),          
-                                #transforms.Normalize((0.5,),(0.5,))]) 
 
     def predict(self, img_stream):
         # Этот метод по переданным картинкам в каком-то формате (PIL картинка, BytesIO с картинкой
@@ -47,7 +42,6 @@ class ClassPredictor:
     def process_image(self, img_stream):
         # используем PIL, чтобы получить картинку из потока и изменить размер
         image = PIL_Image.open(img_stream).resize((224, 224))
-        #image = self.transform(image)
         # переводим картинку в тензор и оборачиваем в объект Image, который использует fastai у себя внутри
         image = Image(self.to_tensor(image))
         return image
