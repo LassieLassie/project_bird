@@ -42,7 +42,7 @@ srsly==0.0.7
 thinc==7.0.4
 tqdm==4.32.2
 typing==3.7.4
-urllib3==1.25.3
+urllib3==1.25.8
 wasabi==0.2.2
 wincertstore==0.2
 https://download.pytorch.org/whl/cpu/torch-1.1.0-cp36-cp36m-linux_x86_64.whl
